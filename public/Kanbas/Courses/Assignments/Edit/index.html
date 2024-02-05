@@ -1,125 +1,163 @@
 <html>
-    <head>
 
-    </head>
-    <body>
-        <!-- <select>
-            <option>SpeedGrader</option>
-            <option>Similarity Matching</option>
-            <option>Text Search</option>
-        </select>
-        <hr>
-        <h2>Assignment Name</h2>
-        <label id="assignment-name" value="A1 - ENV + HTML"></label>
-        <textarea cols="30" row="10">This is the assignment desctiption.</textarea><br><br>
-        <label for="points-assignment">Points</label><br>
-        <input id="points-assignment" placeholder="100"><br><br>
+<head>
+    <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/Kanbas/styles.css" />
+    <link rel="stylesheet" href="./index.css">
+</head>
 
-        <label for="assignment-group">Assignment Group</label><br>
-        <select id="assignment-group">
-            <option>ASSIGNMENTS</option>
-            <option>QUIZES</option>
-            <option>EXAMS</option>
-        </select><br><br>
+<body>
+    <div class="d-flex">
+        <div class="d-flex w-100 mt-4">
+            <div class="w-100 px-5">
+                <div class="d-flex justify-content-end align-items-center me-3 mt-2 pb-2">
+                    <div>
+                        <i class="fa fa-check-circle text-success" aria-hidden="true"></i>
+                        <span class="fw-bold text-success">Published</span>
+                    </div>
+                    <button class="btn btn-light ms-3">
+                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <hr />
+                <div class="mb-5">
+                    <!-- Form part 1 -->
+                    <div class="mb-3">
+                        <label for="assignment-name" class="form-label">Assignment Name</label>
+                        <input type="email" class="form-control" id="assignment-name" placeholder="A1 - ENV + HTML">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4">
+This assignment describes how to install the development environment for creating and working with Web application we will be developing this semester. We will add new content every week, pushing the code to a GitHub source repository, and then deploying the content to a remote server hosted on Netlify.
+                            </textarea>
+                    </div>
 
-        <label for="grade-group">Display Grade as</label><br>
-        <select id="grade-group">
-            <option>Percentage</option>
-            <option>Absolute Value</option>
-            <option>Percentile</option>
-        </select><br><br>
+                    <!-- Actual Form -->
+                    <div class="container-fluid">
+                        <div class="row my-3">
+                            <div class="col-2">
+                                <div class="d-flex w-100 justify-content-end">
+                                    <label for="assignment-points" class="form-label">Points</label>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <input type="text" class="form-control" id="assignment-points" placeholder="100">
+                            </div>
+                        </div>
+                        <div class="row my-3">
+                            <div class="col-2">
+                                <div class="d-flex w-100 justify-content-end">
+                                    <label for="assignment-groups" class="form-label">Assignment Groups</label>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <select id="assignment-groups" class="form-select" aria-label="Default select example">
+                                    <option selected>ASSIGNMENTS</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
 
-        <label for="submission-group">Submission Type</label><br>
-        <select id="submission-group">
-            <option>Online</option>
-            <option>Remote</option>
-            <option>Group</option>
-        </select><br><br>
+                        <div class="row mt-3 mb-5">
+                            <div class="col-2">
+                                <div class="d-flex w-100 justify-content-end">
+                                    <label for="display-grade" class="form-label">Display Grade as</label>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <select id="display-grade" class="form-select" aria-label="Default select example">
+                                    <option selected>Percentage</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
 
-        <label>Online Entry Options</label><br>
-        <input type="checkbox" value="TEXT ENTRY" name="check-online-entry" id="chkbox-text-entry" />
-        <label for="chkbox-text-entry">Text Entry</label><br/>
+                                <br />
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="exclude-assignment">
+                                    <label class="form-check-label" for="exclude-assignment">
+                                        Do not count this assignment towards the final grade
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="d-flex w-100 justify-content-end">
+                                    <label for="assignment-points" class="form-label">Assign</label>
+                                </div>
+                            </div>
+                            <div class="col-5 border rounded-2">
+                                <div class="d-flex flex-column w-100">
+                                    <div class="my-2">
+                                        <label class="fw-bold">Assign to</label>
+                                        <div
+                                            class="d-flex flex-row p-2 align-items-center border border-top border-subtle rounded-2">
+                                            <div
+                                                class="d-flex flex-row fw-light justify-content-center align-items-center rounded-1 fs-12 h-30">
+                                                <button type="button" class="btn btn-light m-0 pe-2">Everyone <i
+                                                        class="fa fa-times"></i></button>
 
-        <input type="checkbox" value="WEBSITE URL" name="check-online-entry" id="chkbox-website-url" />
-        <label for="chkbox-website-url">Website URL</label><br/>
+                                            </div>
+                                        </div>
+                                    </div>
 
-        <input type="checkbox" value="MEDIA RECORDINGS" name="check-online-entry" id="chkbox-media-recordings" />
-        <label for="chkbox-media-recordings">Media Recordings</label><br/>
+                                    <div class="mt-1 mb-3">
+                                        <label for="assignment-due" class="form-label fw-bold">Due</label>
+                                        <input type="date" class="form-control" placeholder="Recipient's username"
+                                            id="assignment-due">
+                                    </div>
 
-        <input type="checkbox" value="STUDENT ANNOTATION" name="check-online-entry" id="chkbox-student-annotation" />
-        <label for="chkbox-student-annotation">Student Annotation</label><br/>
+                                    <div class="row g-1 mb-3">
+                                        <div class="col-6">
+                                            <label for="assignment-available" class="form-label fw-bold">Available
+                                                from</label>
+                                            <input type="date" class="form-control" placeholder="Recipient's username"
+                                                id="assignment-available">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="assignment-until" class="form-label fw-bold">Until</label>
+                                            <input type="date" class="form-control" placeholder="Recipient's username"
+                                                id="assignment-until">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <button type="button" class="btn btn-light rounded-0"> + Add </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="d-flex justify-content-between align-items-center m-3 pt-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="notify-users">
+                        <label class="form-check-label" for="notify-users">
+                            Notify users that this content has changed
+                        </label>
+                    </div>
+                    <div>
+                        <a href="/Kanbas/Courses/Assignments/screen.html" class="text-decoration-none">
+                            <button type="button" class="btn btn-light">
+                                Cancel
+                            </button>
+                        </a>
+                        <a href="/Kanbas/Courses/Assignments/screen.html" class="text-decoration-none">
+                            <button type="button" class="btn btn-danger">
+                                Save
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
 
-        <input type="checkbox" value="FILE UPLOADS" name="check-online-entry" id="chkbox-file-uploads" />
-        <label for="chkbox-file-uploads">File Uploads</label><br/>
-
-        <label>Assign</label><br/>
-        <label for="assign-to">Assign To</label>
-        
- -->
-    <select>
-        <option>SpeedGrader</option>
-        <option>Similarity Matching</option>
-        <option>Text Search</option>
-    </select>
-    <hr>
-    <h2>Assignment Name</h2>
-    <label id="assignment-name" value="A1 - ENV + HTML"></label>
-    <textarea cols="30" row="10">This is the assignment desctiption.</textarea><br><br>
-    <label for="points-assignment">Points</label><br>
-    <input id="points-assignment" placeholder="100"><br><br>
-
-    <label for="assignment-group">Assignment Group</label><br>
-    <select id="assignment-group">
-        <option>ASSIGNMENTS</option>
-        <option>QUIZES</option>
-        <option>EXAMS</option>
-    </select><br><br>
-
-    <label for="grade-group">Display Grade as</label><br>
-    <select id="grade-group">
-        <option>Percentage</option>
-        <option>Absolute Value</option>
-        <option>Percentile</option>
-    </select><br><br>
-
-    <label for="submission-group">Submission Type</label><br>
-    <select id="submission-group">
-        <option>Online</option>
-        <option>Remote</option>
-        <option>Group</option>
-    </select><br><br>
-
-    <label>Online Entry Options</label><br>
-    <input type="checkbox" value="TEXT ENTRY" name="check-online-entry" id="chkbox-text-entry" />
-    <label for="chkbox-text-entry">Text Entry</label><br/>
-
-    <input type="checkbox" value="WEBSITE URL" name="check-online-entry" id="chkbox-website-url" />
-    <label for="chkbox-website-url">Website URL</label><br/>
-
-    <input type="checkbox" value="MEDIA RECORDINGS" name="check-online-entry" id="chkbox-media-recordings" />
-    <label for="chkbox-media-recordings">Media Recordings</label><br/>
-
-    <input type="checkbox" value="STUDENT ANNOTATION" name="check-online-entry" id="chkbox-student-annotation" />
-    <label for="chkbox-student-annotation">Student Annotation</label><br/>
-
-    <input type="checkbox" value="FILE UPLOADS" name="check-online-entry" id="chkbox-file-uploads" />
-    <label for="chkbox-file-uploads">File Uploads</label><br/>
-
-    <label>Assign</label><br/>
-    <label for="assign-to">Assign To</label><br/>
-    <input id="assign-to" value="Everyone"/><br/><br/>
-    <label value="Due" for="due-date">Due</label><br/>
-    <input type="date" id="due-date" value="01/01/2021"/><br/><br/>
-    <label value="Available from" for="available-from">Available from</label><br/>
-    <input type="date" id="available-from" value="01/01/2021"/><br/><br/>
-    <label value="Until" for="until">Until</label><br/>
-    <input type="date" id="until" value="01/01/2021"/><br/><br/>
-    <a href="/Kanbas/Courses/Assignments/screen.html">
-    <button>Cancel</button>
-    </a>
-    <a href="/Kanbas/Courses/Assignments/screen.html">
-    <button>Save</button>
-    </a>
-
-    </body>
 </html>

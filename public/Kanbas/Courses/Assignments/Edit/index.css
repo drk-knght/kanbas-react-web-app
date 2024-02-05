@@ -1,0 +1,31 @@
+.assignment-li:hover {
+    background-color: #d1ecf1;
+}
+
+.fs-12 {
+    font-size: 12px;
+}
+
+.fs-20 {
+    font-size: 20px;
+}
+
+.fs-24 {
+    font-size: 24px;
+}
+
+.mr-20 {
+    margin-right: 20px;
+}
+
+.mr-1 {
+    margin-right: 1px;
+}
+
+.ml-n3 {
+    margin-left: -3.5px;
+}
+
+.h-30 {
+    height: 30px;
+}
