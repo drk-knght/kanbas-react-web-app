@@ -129,7 +129,7 @@
     },
 
     {
-      "_id": "M202",
+      "_id": "M203",
       "name": "Module 2: Review of Java",
       "description": "Understanding Java and its design.",
       "course": "CS5010",
@@ -156,7 +156,7 @@
     },
 
     {
-      "_id": "M203",
+      "_id": "M301",
       "name": "Resources",
       "description": "Basic intro to Web Dev.",
       "course": "CS5610",
@@ -195,7 +195,7 @@
     },
 
     {
-      "_id": "M301",
+      "_id": "M302",
       "name": "Courses Introduction, Syllabus, Agenda, Internet, Web, HTML, Assignment 1",
       "description": "Basic intro to Web Dev.",
       "course": "CS5610",
@@ -234,7 +234,7 @@
     },
 
     {
-      "_id": "M302",
+      "_id": "M303",
       "name": "Formatting User Interface with HTML",
       "description": "Understanding and formatting user interfaces using HTML.",
       "course": "CS5610",
@@ -273,7 +273,7 @@
     },
 
     {
-      "_id": "M303",
+      "_id": "M401",
       "name": "Module 0: Technical Resources and Syllabus",
       "description": "Overview of Deep learning.",
       "course": "CS7210",
@@ -294,7 +294,7 @@
     },
 
     {
-      "_id": "M303",
+      "_id": "M402",
       "name": "Module 1: Design Exploration and Testing",
       "description": "Overview of Deep learning.",
       "course": "CS7210",
@@ -321,7 +321,7 @@
     },
 
     {
-      "_id": "M303",
+      "_id": "M403",
       "name": "Module 2: Basics of Neural Networks and Neurons",
       "description": "Overview of NL and Neurons.",
       "course": "CS7210",
@@ -348,7 +348,7 @@
     },
     
     {
-      "_id": "M303",
+      "_id": "M404",
       "name": "Module 3: Error calculation in Neural Networks",
       "description": "Overview of backprop algo.",
       "course": "CS7210",

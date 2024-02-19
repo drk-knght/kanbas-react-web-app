@@ -26,8 +26,8 @@ function KanbsNavigation(){
 
     const {pathname}= useLocation();
     return (
-        <div className="d-none d-md-block bg-dark full-height">
-            <ul className="wd-kanbas-navigation " >
+        <div className="d-none d-md-block bg-dark">
+            <ul className="wd-kanbas-navigation full-height" style={{backgroundColor:"black"}}>
             
                 <li>
                     <Link to="https://www.northeastern.edu">

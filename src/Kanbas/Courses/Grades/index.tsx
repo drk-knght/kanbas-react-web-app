@@ -1,5 +1,5 @@
 import {assignments, enrollments, grades, users} from "../../Database";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { FaSignInAlt, FaSignOutAlt, FaCog, FaSearch, FaChevronDown, FaFilter } from "react-icons/fa";
 import "./index.css";
 
@@ -9,31 +9,6 @@ function Grades(){
     const es= enrollments.filter((enrollment) => enrollment.course===courseId);
 
     return (
-        /*
-        <div>
-            <h1>Grades</h1>
-            <div className="table responsive">
-                <table className="table">
-                    <thead>
-                        <th>Student Name</th>
-                        {as.map((assignment) => (<th>{assignment.title}</th>))}
-                    </thead>
-                    <tbody>
-                    {es.map((enrollment) => {
-                    const user = users.find((user) => user._id === enrollment.user);
-                    return (
-                        <tr>
-                        <td>{user?.firstName} {user?.lastName}</td>
-                        {assignments.map((assignment) => {
-                            const grade = grades.find(
-                            (grade) => grade.student === enrollment.user && grade.assignment === assignment._id);
-                            return (<td>{grade?.grade || "N/A"}</td>);})}
-                        </tr>);
-                    })}
-                    </tbody>
-                </table>
-            </div>
-        </div> */
         <div className="w-100 px-3">
             
             <div className="d-flex justify-content-end">
@@ -90,7 +65,7 @@ function Grades(){
                         const user = users.find((user) => user._id === enrollment.user);
                         return (
                             <tr>
-                                <td>{user?.firstName} {user?.lastName}</td>
+                                <td><Link to={`#`} className="link-danger link-underline link-underline-opacity-0 link-underline-opacity-100-hover">{user?.firstName} {user?.lastName}</Link></td>
                                 
                                 {
                                     
