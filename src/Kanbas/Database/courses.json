@@ -11,29 +11,6 @@
   },
     
   { 
-    "_id": "GS101", 
-    "name": "Career Design Course", 
-    "title": "career.design",
-    "description":"career.design",
-    "number": "GS1012024", 
-    "startDate": "2023-01-10",
-    "endDate": "2023-05-15", 
-    "image": "career.jpeg"
-
-  },
-
-  { 
-    "_id": "CS5200", 
-    "name": "CS5200 MERGED FALL 2023",
-    "title": "CS5200.MERGED.FALL2023.Fall 2023 Semester ",
-    "description":"2022156_43 Fall 2023 Semester Full Term",
-    "number": "CS52002024", 
-    "startDate": "2023-01-10",
-    "endDate": "2023-05-15", 
-    "image": "dbms.jpeg"  
-  },
-
-  { 
       "_id": "CS7210", 
       "name": "CS7210 Deep Learning", 
       "title": "CS7210.MERGED.202410.Fall 2024 Semester",
@@ -44,28 +21,7 @@
       "image": "dl.avif"  
   },
     
-  { 
-    "_id": "CS101", 
-    "name": "Khoury College of CS", 
-    "title": "Khoury College Orientation.U.S.Fall.2023",
-    "description":"2023-khoury-computer_science_students",
-    "number": "CS1012024", 
-    "startDate": "2023-01-10",
-    "endDate": "2023-05-15", 
-    "image": "kO.jpeg"
-
-  },
-
-  { 
-    "_id": "F1011", 
-    "name": "F-1 Orientation U.S. Fall 2023", 
-    "title": "F-1 Orientation.U.S.Fall.2023",
-    "description":"Last updated 3 mins ago",
-    "number": "F10112024", 
-    "startDate": "2023-01-10",
-    "endDate": "2023-05-15", 
-    "image": "orientation.jpeg"  
-  },
+  
   
   { 
     "_id": "CS5010", 

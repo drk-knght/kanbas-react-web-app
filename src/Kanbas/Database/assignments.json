@@ -1,11 +1,98 @@
 [
-    { "_id": "A101", "title": "Propulsion Assignment", "course": "CS5800" },
-    { "_id": "A102", "title": "Combustion Analysis", "course": "CS5800" },
-    { "_id": "A103", "title": "Nozzle Design Project", "course": "CS5800" },
-    { "_id": "A201", "title": "Aerodynamics Quiz", "course": "CS5800" },
-    { "_id": "A202", "title": "Flow Analysis", "course": "CS5800" },
-    { "_id": "A203", "title": "Heating Analysis", "course": "CS5800" },
-    { "_id": "A301", "title": "Structural Design Task", "course": "RS103" },
-    { "_id": "A302", "title": "Orbital Calculations", "course": "RS103" },
-    { "_id": "A303", "title": "Systems Engineering Exam", "course": "RS103" }
+    { 
+      "_id": "A101", 
+      "title": "Box division Assignment", 
+      "course": "CS5010",
+      "dueDate": "2024-09-18",
+      "totalPoints": 100, 
+      "notAvailableBefore": null
+    },
+    { 
+      "_id": "A102", 
+      "title": "Sparse Linked List Matrix", 
+      "course": "CS5010",
+      "dueDate": "2024-10-02",
+      "totalPoints": 100,
+      "notAvailableBefore": "Sep 29, 2020 at 12.00 pm"
+    },
+    { 
+      "_id": "A103", 
+      "title": "Image Processing Application", 
+      "course": "CS5010",
+      "dueDate": "2024-10-16",
+      "totalPoints": 100,
+      "notAvailableBefore": null
+    },
+    { 
+      "_id": "A201", 
+      "title": "Implement different deep networks (MNIST dataset)", 
+      "course": "CS7210",
+      "dueDate": "2024-09-18",
+      "totalPoints": 100, 
+      "notAvailableBefore": null
+    },
+    { 
+      "_id": "A202", 
+      "title": "Implement the Back Propagation Algo", 
+      "course": "CS7210",
+      "dueDate": "2024-10-02",
+      "totalPoints": 100,
+      "notAvailableBefore": "Sep 29, 2020 at 12.00 pm" 
+    },
+    { 
+      "_id": "A203", 
+      "title": "Regularization techniques on Neural Networks", 
+      "course": "CS7210",
+      "dueDate": "2024-10-16",
+      "totalPoints": 100,
+      "notAvailableBefore": null 
+    },
+    { 
+      "_id": "A301", 
+      "title": "Asymptotic complexity Analysis", 
+      "course": "CS5800",
+      "dueDate": "2024-09-18",
+      "totalPoints": 100, 
+      "notAvailableBefore": null 
+    },
+    { 
+      "_id": "A302", 
+      "title": "Insertion Sort, Merge Sort, Quick Sort", 
+      "course": "CS5800",
+      "dueDate": "2024-10-02",
+      "totalPoints": 100,
+      "notAvailableBefore": "Sep 29, 2020 at 12.00 pm"  
+    },
+    { 
+      "_id": "A303", 
+      "title": "Bubble Sort, Radix Sort, Bucket Sort", 
+      "course": "CS5800",
+      "dueDate": "2024-10-16",
+      "totalPoints": 100,
+      "notAvailableBefore": null  
+    },
+    { 
+      "_id": "A401", 
+      "title": "Intro to HTML", 
+      "course": "CS5610",
+      "dueDate": "2024-09-18",
+      "totalPoints": 100, 
+      "notAvailableBefore": null  
+    },
+    { 
+      "_id": "A402", 
+      "title": "Implement CSS for front end", 
+      "course": "CS5610",
+      "dueDate": "2024-10-02",
+      "totalPoints": 100,
+      "notAvailableBefore": "Sep 29, 2020 at 12.00 pm"   
+    },
+    { 
+      "_id": "A403", 
+      "title": "Javascript for the client-side", 
+      "course": "CS5610",
+      "dueDate": "2024-10-16",
+      "totalPoints": 100,
+      "notAvailableBefore": null  
+    }
   ]

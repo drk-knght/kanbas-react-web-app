@@ -116,3 +116,19 @@
 .breadcrumb-border {
     border-bottom: 1px solid gray;
 }
+
+.window-container {
+    position: fixed;
+    overflow-y: scroll;
+    top: 100px;
+    left: 320px;
+    bottom: 0px;
+    right: 0px;
+    
+}
+
+@media (max-width: 768px) {
+    .window-container {
+        left: 0px;
+    }
+}
