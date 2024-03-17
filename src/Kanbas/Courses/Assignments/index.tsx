@@ -25,7 +25,7 @@ function Assignments(){
                                 <button className="btn btn-light m-1">
                                     + Group
                                 </button>
-                                <button className="btn btn-danger m-1">+ Assignment</button>
+                                <Link to={`/Kanbas/Courses/${courseId}/Assignments/000`}><button className="btn btn-danger m-1">+ Assignment</button></Link>
                                 <button className="btn btn-light m-1"><FaEllipsisV className="fs-20"/></button>
                             </div>
                         </div>

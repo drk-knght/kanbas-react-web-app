@@ -9,3 +9,8 @@ export {
     courses, modules, assignments,
     users, enrollments, grades
 };
+
+export default {
+    courses, modules, assignments,
+    users, enrollments, grades
+};
