@@ -64,7 +64,8 @@ function AssignmentEditor(){
                     <input 
                         
                         className="form-control" 
-                        id="assignment-name" 
+                        id="assignment-name"
+                        value={assignment?.name} 
                         onChange={(e)=>dispatch(setAssignment({
                             ...assignment,
                             name: e.target.value
@@ -76,6 +77,7 @@ function AssignmentEditor(){
                     <textarea 
                     className="form-control" 
                     id="exampleFormControlTextarea1" 
+                    value={assignment.description}
                     onChange={(e)=>dispatch(setAssignment({
                         ...assignment,
                         description: e.target.value
@@ -97,6 +99,7 @@ This assignment describes how to install the development environment for creatin
                                 type="number" 
                                 className="form-control" 
                                 id="assignment-points" 
+                                value={assignment.totalPoints}
                                 onChange={(e)=> dispatch(
                                     setAssignment({
                                         ...assignment,
@@ -175,6 +178,7 @@ This assignment describes how to install the development environment for creatin
                                         type="date" 
                                         className="form-control" 
                                         placeholder={assignment?.dueDate}
+                                        value={assignment?.dueDate??''}
                                         onChange={(e)=>{
                                             dispatch(
                                                 setAssignment({
@@ -193,6 +197,7 @@ This assignment describes how to install the development environment for creatin
                                             type="date" 
                                             className="form-control"
                                             value={assignment?.availableFromDate??''} 
+                                            // placeholder={assignment?.dueDate}
                                             onChange={(e)=>
                                                 dispatch(
                                                     updateAssignment({
@@ -208,7 +213,8 @@ This assignment describes how to install the development environment for creatin
                                         <input 
                                             type="date" 
                                             className="form-control"
-                                            placeholder={assignment?.availableUntilDate??''} 
+                                            // placeholder={assignment?.availableUntilDate??''} 
+                                            value={assignment?.availableUntilDate??''} 
                                             onChange={(e)=>
                                                 dispatch(
                                                     updateAssignment({

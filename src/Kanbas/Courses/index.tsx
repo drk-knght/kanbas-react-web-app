@@ -19,7 +19,7 @@ function Courses(
   const href= window.location.href;
   const splitHref=href.split("/");
   const breadcrumbText=splitHref[splitHref.length-1]==="Home" ? 
-                      ["Home"]: splitHref.at(-2)=="Assignments" ?
+                      ["Home"]: splitHref.at(-2)==="Assignments" ?
                       [splitHref.at(-2), splitHref.at(-1)] : [splitHref.at(-1)];
   return(
 
