@@ -1,23 +1,43 @@
 import React from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import {assignments} from "../../../Database";
+
 import { FaCheckCircle, FaEllipsisV } from "react-icons/fa";
-import { UseDispatch,useSelector } from "react-redux";
-import { addAssignment} from "../assignmentsReducer";
+import { useDispatch,useSelector } from "react-redux";
+import { addAssignment, setAssignment, updateAssignment} from "../assignmentsReducer";
 import { KanbasState } from "../../../store";
 import "./index.css";
 
 function AssignmentEditor(){
-    const {assignmentId} =useParams();
-    const assignment =assignments.find(
-        (assignment) => assignment._id ==assignmentId
-    );
+    
     const {courseId} =useParams();
+    const dispatch=useDispatch();
+
+    const assignmentList=useSelector(
+        (state: KanbasState)=>state.assignmentsReducer.assignments
+    );
+
+    const assignment=useSelector(
+        (state: KanbasState)=>state.assignmentsReducer.assignment
+    );
+
+    const editAssign = assignmentList.findIndex(a=> a._id === assignment._id)!==-1;
     const navigate =useNavigate();
+
     const handleSave =() => {
-        console.log("Actually saving assignment TBD in later assignments");
+        
+        if(editAssign){
+            dispatch(updateAssignment(assignment));
+        }
+        else{
+            dispatch(addAssignment({...assignment,course:courseId}));
+        }
         navigate(`/Kanbas/Courses/${courseId}/Assignments`);
     };
+
+    
+    
+    
+
     return (
         <div className="d-flex flex-column w-100 px-5">
             
@@ -35,11 +55,33 @@ function AssignmentEditor(){
             
             <div className="mb-5">
                 <div className="mb-3">
-                    <label htmlFor="assignment-name" className="form-label">Assignment Name</label>
-                    <input type="email" className="form-control" id="assignment-name" placeholder={assignment?.title}/>
+                    <label 
+                        htmlFor="assignment-name" 
+                        className="form-label"
+                    >
+                        Assignment Name
+                    </label>
+                    <input 
+                        
+                        className="form-control" 
+                        id="assignment-name" 
+                        onChange={(e)=>dispatch(setAssignment({
+                            ...assignment,
+                            name: e.target.value
+                        }))}
+                        placeholder={assignment?.name}
+                    />
                 </div>
                 <div className="mb-3">
-                    <textarea className="form-control" id="exampleFormControlTextarea1" rows={4}>
+                    <textarea 
+                    className="form-control" 
+                    id="exampleFormControlTextarea1" 
+                    onChange={(e)=>dispatch(setAssignment({
+                        ...assignment,
+                        description: e.target.value
+                    }))}
+                    rows={4}
+                    >
 This assignment describes how to install the development environment for creating and working with Web application we will be developing this semester. We will add new content every week, pushing the code to a GitHub source repository, and then deploying the content to a remote server hosted on Netlify.
                     </textarea>
                 </div>
@@ -51,7 +93,17 @@ This assignment describes how to install the development environment for creatin
                             </div>
                         </div>
                         <div className="col-5">
-                            <input type="number" className="form-control" id="assignment-points" placeholder="100"/>
+                            <input 
+                                type="number" 
+                                className="form-control" 
+                                id="assignment-points" 
+                                onChange={(e)=> dispatch(
+                                    setAssignment({
+                                        ...assignment,
+                                        totalPoints:e.target.value
+                                }))}
+                                placeholder="100"
+                            />
                         </div>
                     </div>
                     
@@ -119,7 +171,17 @@ This assignment describes how to install the development environment for creatin
 
                                 <div className="mt-1 mb-3">
                                     <label htmlFor="assignment-due" className="form-label fw-bold">Due</label>
-                                    <input type="date" className="form-control" placeholder="Recipient's username"
+                                    <input 
+                                        type="date" 
+                                        className="form-control" 
+                                        placeholder={assignment?.dueDate}
+                                        onChange={(e)=>{
+                                            dispatch(
+                                                setAssignment({
+                                                    ...assignment,
+                                                    dueDate:e.target.value,
+                                            }))
+                                        }}
                                         id="assignment-due"/>
                                 </div>
 
@@ -127,13 +189,35 @@ This assignment describes how to install the development environment for creatin
                                     <div className="col-6">
                                         <label htmlFor="assignment-available" className="form-label fw-bold">Available
                                             from</label>
-                                        <input type="date" className="form-control"
-                                            placeholder="Recipient's username" id="assignment-available"/>
+                                        <input 
+                                            type="date" 
+                                            className="form-control"
+                                            value={assignment?.availableFromDate??''} 
+                                            onChange={(e)=>
+                                                dispatch(
+                                                    updateAssignment({
+                                                        ...assignment,
+                                                        availableFromDate: e.target.value,
+                                                    })
+                                            )}
+                                            id="assignment-available"
+                                        />
                                     </div>
                                     <div className="col-6">
                                         <label htmlFor="assignment-until" className="form-label fw-bold">Until</label>
-                                        <input type="date" className="form-control"
-                                            placeholder="Recipient's username" id="assignment-until"/>
+                                        <input 
+                                            type="date" 
+                                            className="form-control"
+                                            placeholder={assignment?.availableUntilDate??''} 
+                                            onChange={(e)=>
+                                                dispatch(
+                                                    updateAssignment({
+                                                        ...assignment,
+                                                        availableUntilDate: e.target.value,
+                                                    })
+                                            )}
+                                            id="assignment-until"
+                                        />
                                     </div>
                                 </div>
                                 <div className="row mt-2">

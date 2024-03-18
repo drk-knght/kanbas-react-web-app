@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import "./index.css";
-import {modules} from "../../Database"
 import { FaEllipsisV, FaCheckCircle, FaPlusCircle } from "react-icons/fa";
 import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
@@ -70,8 +69,39 @@ function ModuleList() {
                 <button className="btn btn-light m-1"><FaEllipsisV/></button>
             </div>
             <hr/>
+            <div>
+                <h4>Add New Module</h4>
+                <div>
+                    <input 
+                        className="form-control my-1"
+                        value={module.name}
+                        onChange={(e)=> dispatch(setModule({
+                        ...module, name:e.target.value
+                    }))}/>
+                </div>
+                <div>
+                    <textarea 
+                        className="form-control my-1"
+                        value={module.description}
+                        onChange={(e)=>dispatch(setModule({
+                        ...module,description:e.target.value
+                    }))}/>
+                </div>
+                <div>
+                    <button 
+                        onClick={()=>dispatch(addModule({...module,course:courseId}))}
+                        className="btn btn-sm btn-success me-1">
+                        Add
+                    </button>
+                    <button 
+                        onClick={()=>dispatch(updateModule(module))}
+                        className="btn btn-sm btn-primary me-1">
+                        Update
+                    </button>
+                </div>
+            </div>
             <ul className="list-group wd-modules mt-4">
-                <li className="list-group-item">
+                {/* <li className="list-group-item">
                     <button onClick={()=>dispatch(addModule({...module,course:courseId}))}>Add</button>
                     <button onClick={()=>dispatch(updateModule(module))}>Update</button>
                     <input 
@@ -84,7 +114,7 @@ function ModuleList() {
                         onChange={(e)=>dispatch(setModule({
                         ...module,description:e.target.value
                     }))}/>
-                </li>
+                </li> */}
                 {moduleList.filter((module)=> module.course===courseId)
                 .map((module,index) =>(
                     <li 
@@ -110,8 +140,8 @@ function ModuleList() {
                                 </button>
                                 <FaPlusCircle className="me-3 fs-20 cursor-pointer grey-color"/>
                                 <button
-                                    onClick={(e) => {dispatch(setModule(module))}}
-                                    className="btn btn-primary" style={{padding:3}}>
+                                    onClick={() => {dispatch(setModule(module))}}
+                                    className="btn btn-primary me-1" style={{padding:3}}>
                                     Edit
                                 </button>
                                 <button

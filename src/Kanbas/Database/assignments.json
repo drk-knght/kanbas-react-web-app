@@ -1,98 +1,124 @@
 [
     { 
       "_id": "A101", 
-      "title": "Box division Assignment", 
+      "name": "Box division Assignment", 
+      "description":"New Assignment Description",
       "course": "CS5010",
       "dueDate": "2024-09-18",
       "totalPoints": 100, 
-      "notAvailableBefore": null
+      "availableFromDate":null,
+      "availableUntilDate":null
+      
     },
     { 
       "_id": "A102", 
-      "title": "Sparse Linked List Matrix", 
+      "name": "Sparse Linked List Matrix", 
+      "description":"New Assignment Description",
       "course": "CS5010",
       "dueDate": "2024-10-02",
       "totalPoints": 100,
-      "notAvailableBefore": "Sep 29, 2020 at 12.00 pm"
+      "availableFromDate": null,
+      "availableUntilDate": null
+      
     },
     { 
       "_id": "A103", 
-      "title": "Image Processing Application", 
+      "name": "Image Processing Application", 
+      "description":"New Assignment Description",
       "course": "CS5010",
       "dueDate": "2024-10-16",
       "totalPoints": 100,
-      "notAvailableBefore": null
+      "availableFromDate": null,
+      "availableUntilDate": null
     },
     { 
       "_id": "A201", 
-      "title": "Implement different deep networks (MNIST dataset)", 
+      "name": "Implement different deep networks (MNIST dataset)", 
+      "description":"New Assignment Description",
       "course": "CS7210",
       "dueDate": "2024-09-18",
-      "totalPoints": 100, 
-      "notAvailableBefore": null
+      "totalPoints": 100,
+      "availableFromDate": null,
+      "availableUntilDate": null
     },
     { 
       "_id": "A202", 
-      "title": "Implement the Back Propagation Algo", 
+      "name": "Implement the Back Propagation Algo", 
+      "description":"New Assignment Description",
       "course": "CS7210",
       "dueDate": "2024-10-02",
       "totalPoints": 100,
-      "notAvailableBefore": "Sep 29, 2020 at 12.00 pm" 
+      "availableFromDate": null,
+      "availableUntilDate": null
     },
     { 
       "_id": "A203", 
-      "title": "Regularization techniques on Neural Networks", 
+      "name": "Regularization techniques on Neural Networks", 
+      "description":"New Assignment Description",
       "course": "CS7210",
       "dueDate": "2024-10-16",
       "totalPoints": 100,
-      "notAvailableBefore": null 
+      "availableFromDate": null,
+      "availableUntilDate": null
     },
     { 
       "_id": "A301", 
-      "title": "Asymptotic complexity Analysis", 
+      "name": "Asymptotic complexity Analysis", 
+      "description":"New Assignment Description",
       "course": "CS5800",
       "dueDate": "2024-09-18",
-      "totalPoints": 100, 
-      "notAvailableBefore": null 
+      "totalPoints": 100,
+      "availableFromDate": null,
+      "availableUntilDate": null
     },
     { 
       "_id": "A302", 
-      "title": "Insertion Sort, Merge Sort, Quick Sort", 
+      "name": "Insertion Sort, Merge Sort, Quick Sort", 
+      "description":"New Assignment Description",
       "course": "CS5800",
       "dueDate": "2024-10-02",
       "totalPoints": 100,
-      "notAvailableBefore": "Sep 29, 2020 at 12.00 pm"  
+      "availableFromDate": null,
+      "availableUntilDate": null 
     },
     { 
       "_id": "A303", 
-      "title": "Bubble Sort, Radix Sort, Bucket Sort", 
+      "name": "Bubble Sort, Radix Sort, Bucket Sort", 
+      "description":"New Assignment Description",
       "course": "CS5800",
       "dueDate": "2024-10-16",
       "totalPoints": 100,
-      "notAvailableBefore": null  
+      "availableFromDate": null,
+      "availableUntilDate": null
     },
     { 
       "_id": "A401", 
-      "title": "Intro to HTML", 
+      "name": "Intro to HTML", 
+      "description":"New Assignment Description",
       "course": "CS5610",
       "dueDate": "2024-09-18",
-      "totalPoints": 100, 
-      "notAvailableBefore": null  
+      "totalPoints": 100,
+      "availableFromDate": null,
+      "availableUntilDate": null
     },
     { 
       "_id": "A402", 
-      "title": "Implement CSS for front end", 
+      "name": "Implement CSS for front end", 
+      "description":"New Assignment Description",
       "course": "CS5610",
       "dueDate": "2024-10-02",
       "totalPoints": 100,
-      "notAvailableBefore": "Sep 29, 2020 at 12.00 pm"   
+      "availableFromDate": null,
+      "availableUntilDate": null
     },
     { 
       "_id": "A403", 
-      "title": "Javascript for the client-side", 
+      "name": "Javascript for the client-side", 
+      "description":"New Assignment Description",
       "course": "CS5610",
       "dueDate": "2024-10-16",
       "totalPoints": 100,
-      "notAvailableBefore": null  
+      "availableFromDate": null,
+      "availableUntilDate": null
     }
   ]

@@ -52,7 +52,7 @@ function Grades(){
                             {
                                 as.map((assignment) => 
                                 (
-                                    <th className="fw-normal text-center">{assignment.title}
+                                    <th className="fw-normal text-center">{assignment.name}
                                         <br />
                                         <span className="fs-15">Out of 100</span>
                                     </th> 

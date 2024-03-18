@@ -1,14 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import {FaCheckCircle, FaEllipsisV, FaPlusCircle, FaPlus, FaPencilAlt} from "react-icons/fa";
 import {PiNotePencil} from "react-icons/pi";
-import {Link, useParams} from "react-router-dom";
-import { assignments } from "../../Database";
+import {Link, useNavigate, useParams} from "react-router-dom";
+// import { assignments } from "../../Database";
+import { KanbasState } from "../../store";
+import { useDispatch,useSelector } from "react-redux";
+import { Assignment } from "../../../types";
 import "./index.css"
+import { deleteAssignment, setAssignment } from "./assignmentsReducer";
 
 function Assignments(){
     const {courseId}= useParams();
-    const assignmentList=assignments.filter(
-        (assignment) => assignment.course ===courseId); 
+    
+    const dispatch=useDispatch();
+    const navigate=useNavigate();
+
+    const assignmentList=useSelector((state:KanbasState) => state.assignmentsReducer.assignments); 
+
+    const courseAssignment=assignmentList.filter(assignment => assignment.course === courseId);
+
+    const [selectedAssignment, setSelectedAssignment] = useState<string>('');
+    const [showDialog, setShowDialog]=useState(false);
+
+    const handleShowDialog = () =>{
+        setShowDialog(true);
+    };
+
+    const handleCloseDialog = () =>{
+        setShowDialog(false);
+    }
+
+    const assignmentDelete= () =>{
+        dispatch(deleteAssignment(selectedAssignment));
+        setShowDialog(false);
+    }
+
+    const navigateToAssignment=(assignment: Assignment)=> {
+        // console.log(assignment);
+        dispatch(setAssignment(assignment));
+        
+        // console.log(courseId);
+        navigate(`/Kanbas/Course/${courseId}/Assignments/${assignment._id}`);
+        // console.log(`/Kanbas/Course/${courseId}/Assignments/${assignment._id}`);
+    };
+    
     
         return (
             <>
@@ -50,43 +85,60 @@ function Assignments(){
                                     </span>
                                 </div>
                                 <ul className="list-group">
-                                    {assignmentList.map((assignment)=>{
+                                    {courseAssignment.map( assignment=>{
                                         return (
-                                            <li key={assignment._id} className="list-group-items assignment-li">
+                                            <li key={assignment._id} 
+                                                className="list-group-items assignment-li"
+                                            >
                                                 <div className="module-content fw-bold d-flex justify-content-center align-itmes-center ms-1 py-2">
                                                     <FaEllipsisV className="fs-20"/>
                                                     <FaEllipsisV className="fs-20" style={{marginLeft:-13}}/>
                                                     <PiNotePencil className="text-success fs-24 mx-4"/>
                                                     <span className="w-300 me-auto">
-                                                        <Link 
-                                                        to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
-                                                        className="link-dark link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
-                                                            {assignment.title}
-                                                        </Link>
+                                                        <span 
+                                                        onClick={()=>navigateToAssignment(assignment)}
+                                                        className="text-decorattion-underline cursor-pointer">
+                                                            {assignment.name}
+                                                        </span>
                                                         <br/>
-                                                        <Link 
-                                                        to="#"
-                                                        className="fw-normal fs-12 link-danger link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
-                                                            Multiple Modules
-                                                        </Link>
-                                                        <span className="fw-normal fs-16"> | </span>
-                                                        <span className="fw-normal fs-12">
-                                                            {!! assignment.notAvailableBefore && (
-                                                                <span>
-                                                                    <span className="fw-bold">Not available until</span> {" "}{assignment.notAvailableBefore}
-                                                                    <span className="fw-normal fs-16"> | </span>
+                                                        <span>
+                                                            <Link 
+                                                            to="#"
+                                                            className="fw-normal fs-12 link-danger link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
+                                                                Multiple Modules
+                                                            </Link>
+                                                            <span className="fw-normal fs-16"> | </span>
+                                                            <span className="fw-normal fs-12">
+                                                                {!! assignment.availableFromDate && (
+                                                                    <span>
+                                                                        <span className="fw-bold">Not available until</span> {" "}{assignment.availableFromDate}
+                                                                        <span className="fw-normal fs-16"> | </span>
 
-                                                                </span>
-                                                            )}
-                                                            <span className="fw-bold">Due</span> {assignment.dueDate}
-                                                            <span className="fw-normal fs-16"> | </span> Points: {assignment.totalPoints}
+                                                                    </span>
+                                                                )}
+                                                                <span className="fw-bold">Due</span> {assignment.dueDate}
+                                                                <span className="fw-normal fs-16"> | </span> Points: {assignment.totalPoints}
+                                                            </span>
                                                         </span>
                                                     </span>
-                                                    <span className="pe-3">
-                                                        <FaCheckCircle className="text-success fs-20 me-3 cursor-pointer"/>
-                                                        <FaEllipsisV className="fs-20 ms-2 cursor-pointer"/>
-                                                    </span>
+                                                    <span className="me-2">
+                                                        <button
+                                                        type="button"
+                                                        onClick={()=>{
+                                                            handleShowDialog();
+                                                            setSelectedAssignment(assignment._id);
+                                                            // dispatch(deleteAssignment(assignment._id));
+                                                        }}
+                                                        className="btn btn-danger btn-sm rounded-2 p-1 me-2"
+                                                        >
+                                                            Delete
+                                                        </button>
 
+                                                        <span className="pe-3">
+                                                            <FaCheckCircle className="text-success fs-20 me-3 cursor-pointer"/>
+                                                            <FaEllipsisV className="fs-20 ms-2 cursor-pointer"/>
+                                                        </span>
+                                                    </span>
                                                 </div>
                                             </li>
                                         );
@@ -94,9 +146,39 @@ function Assignments(){
                                 </ul>
                             </li>
                         </ul>
-                        
                     </div>
                 </div>
+                {showDialog && (
+                    <div className="modal show d-block" tabIndex={-1} role="dialog">
+                        <div className="modal-dialog" role="document">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h4 className="modal-title">Dialog Title</h4>
+                                </div>
+                                <div className="modal-body">
+                                    <p>Are you sure you want to delete the assignment?</p>
+                                </div>
+                                <div className="modal-footer">
+                                    <button
+                                    type="button"
+                                    className="btn btn-secondary"
+                                    onClick={handleCloseDialog}
+                                    >
+                                    Cancel
+                                    </button>
+                                    <button
+                                    type="button"
+                                    className="btn btn-danger"
+                                    onClick={assignmentDelete}
+                                    >
+                                    Delete
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+                {showDialog && <div className="modal-backdrop show"></div>}
             </>
         );
 }
