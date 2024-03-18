@@ -6,8 +6,8 @@
       "course": "CS5010",
       "dueDate": "2024-09-18",
       "totalPoints": 100, 
-      "availableFromDate":null,
-      "availableUntilDate":null
+      "availableFromDate":"2024-09-18",
+      "availableUntilDate":"2024-09-18"
       
     },
     { 
@@ -17,8 +17,8 @@
       "course": "CS5010",
       "dueDate": "2024-10-02",
       "totalPoints": 100,
-      "availableFromDate": null,
-      "availableUntilDate": null
+      "availableFromDate": "2024-09-18",
+      "availableUntilDate": "2024-09-18"
       
     },
     { 
@@ -28,8 +28,8 @@
       "course": "CS5010",
       "dueDate": "2024-10-16",
       "totalPoints": 100,
-      "availableFromDate": null,
-      "availableUntilDate": null
+      "availableFromDate": "2024-09-18",
+      "availableUntilDate": "2024-09-18"
     },
     { 
       "_id": "A201", 
@@ -38,8 +38,8 @@
       "course": "CS7210",
       "dueDate": "2024-09-18",
       "totalPoints": 100,
-      "availableFromDate": null,
-      "availableUntilDate": null
+      "availableFromDate": "2024-09-18",
+      "availableUntilDate": "2024-09-18"
     },
     { 
       "_id": "A202", 
@@ -48,8 +48,8 @@
       "course": "CS7210",
       "dueDate": "2024-10-02",
       "totalPoints": 100,
-      "availableFromDate": null,
-      "availableUntilDate": null
+      "availableFromDate": "2024-09-18",
+      "availableUntilDate": "2024-09-18"
     },
     { 
       "_id": "A203", 
@@ -58,8 +58,8 @@
       "course": "CS7210",
       "dueDate": "2024-10-16",
       "totalPoints": 100,
-      "availableFromDate": null,
-      "availableUntilDate": null
+      "availableFromDate": "2024-09-18",
+      "availableUntilDate": "2024-09-18"
     },
     { 
       "_id": "A301", 
@@ -68,8 +68,8 @@
       "course": "CS5800",
       "dueDate": "2024-09-18",
       "totalPoints": 100,
-      "availableFromDate": null,
-      "availableUntilDate": null
+      "availableFromDate": "2024-09-18",
+      "availableUntilDate": "2024-09-18"
     },
     { 
       "_id": "A302", 
@@ -78,8 +78,8 @@
       "course": "CS5800",
       "dueDate": "2024-10-02",
       "totalPoints": 100,
-      "availableFromDate": null,
-      "availableUntilDate": null 
+      "availableFromDate": "2024-09-18",
+      "availableUntilDate": "2024-09-18" 
     },
     { 
       "_id": "A303", 
@@ -88,8 +88,8 @@
       "course": "CS5800",
       "dueDate": "2024-10-16",
       "totalPoints": 100,
-      "availableFromDate": null,
-      "availableUntilDate": null
+      "availableFromDate": "2024-09-18",
+      "availableUntilDate": "2024-09-18"
     },
     { 
       "_id": "A401", 
@@ -98,8 +98,8 @@
       "course": "CS5610",
       "dueDate": "2024-09-18",
       "totalPoints": 100,
-      "availableFromDate": null,
-      "availableUntilDate": null
+      "availableFromDate": "2024-09-18",
+      "availableUntilDate": "2024-09-18"
     },
     { 
       "_id": "A402", 
@@ -108,8 +108,8 @@
       "course": "CS5610",
       "dueDate": "2024-10-02",
       "totalPoints": 100,
-      "availableFromDate": null,
-      "availableUntilDate": null
+      "availableFromDate": "2024-09-18",
+      "availableUntilDate": "2024-09-18"
     },
     { 
       "_id": "A403", 
@@ -118,7 +118,7 @@
       "course": "CS5610",
       "dueDate": "2024-10-16",
       "totalPoints": 100,
-      "availableFromDate": null,
-      "availableUntilDate": null
+      "availableFromDate": "2024-09-18",
+      "availableUntilDate": "2024-09-18"
     }
   ]

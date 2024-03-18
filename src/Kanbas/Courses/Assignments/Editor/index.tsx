@@ -196,11 +196,11 @@ This assignment describes how to install the development environment for creatin
                                         <input 
                                             type="date" 
                                             className="form-control"
+                                            placeholder={assignment?.availableFromDate??''}
                                             value={assignment?.availableFromDate??''} 
-                                            // placeholder={assignment?.dueDate}
                                             onChange={(e)=>
                                                 dispatch(
-                                                    updateAssignment({
+                                                    setAssignment({
                                                         ...assignment,
                                                         availableFromDate: e.target.value,
                                                     })
@@ -213,16 +213,17 @@ This assignment describes how to install the development environment for creatin
                                         <input 
                                             type="date" 
                                             className="form-control"
-                                            // placeholder={assignment?.availableUntilDate??''} 
+                                            id="assignment-until"
+                                            placeholder={assignment?.availableUntilDate??''} 
                                             value={assignment?.availableUntilDate??''} 
                                             onChange={(e)=>
                                                 dispatch(
-                                                    updateAssignment({
+                                                    setAssignment({
                                                         ...assignment,
                                                         availableUntilDate: e.target.value,
                                                     })
                                             )}
-                                            id="assignment-until"
+                                            
                                         />
                                     </div>
                                 </div>
