@@ -40,7 +40,7 @@ function Assignments(){
         dispatch(setAssignment(assignment));
         
         // console.log(courseId);
-        navigate(`/Kanbas/Course/${courseId}/Assignments/${assignment._id}`);
+        navigate(`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`);
         // console.log(`/Kanbas/Course/${courseId}/Assignments/${assignment._id}`);
     };
     
